@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css?family=Staatliches&subset=latin-ext');
+
+:root {
+    --main-color: #596275;
+    --secondary-color: #d1d8e0;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Staatliches', cursive;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+}
+
+
+
+main {
+    padding: 3% 0;
+    min-height: 100%;
+    background-position: center;
+    background-size: cover;
+    display: grid;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(7, 10vh);
+    grid-template-areas:
+        "description description description description"
+        "about . . ."
+        ". . . CV"
+        ". . . ."
+        ". . . ."
+        "github . . portfolio"
+        ". . . ."
+        ". . .  socials"
+        "contact  . . ."
+}
+
+a {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px;
+    box-shadow: 0px 0px 1px 4px var(--secondary-color), 0px 0px 50px 12px var(--main-color);
+    transition: all .4s;
+}
+
+a:hover {
+    background-color: var(--secondary-color);
+    color: var(--main-color);
+    box-shadow: 0px 0px 50px 12px var(--main-color), 0px 0px 10px 4px var(--secondary-color);
+}
+
+h1 {
+    text-align: center;
+    grid-area: description;
+    font-size: 5rem;
+    letter-spacing: 7px;
+    text-transform: uppercase;
+    color: var(--secondary-color)
+}
+
+a:nth-child(1) {
+    grid-area: about;
+    grid-row: span 2;
+
+}
+
+a:nth-child(2) {
+    grid-row: span 3;
+    grid-area: portfolio;
+
+}
+
+a:nth-child(3) {
+    grid-area: github;
+}
+
+a:nth-child(4) {
+    grid-area: CV;
+}
+
+a:nth-child(5) {
+    grid-area: socials;
+}
+
+a:nth-child(6) {
+    grid-area: contact;
+}
+
+
+
+/*  */
+@media screen and (max-width:720px) {
+    html {
+        font-size: 6px
+    }
+
+    a {
+        padding: 3px
+    }
+
+    main {
+        background-image: radial-gradient(ellipse, rgba(76, 76, 76, 0) 0%, rgba(43, 43, 43, 0.4) 36%, rgba(17, 17, 17, 0.9) 72%, rgba(0, 0, 0, 1) 100%), url('img/small_img.jpeg');
+    }
+}
+
+@media screen and (min-width:721px) {
+    main {
+        background-image: radial-gradient(ellipse, rgba(76, 76, 76, 0) 0%, rgba(43, 43, 43, 0.4) 36%, rgba(17, 17, 17, 0.9) 72%, rgba(0, 0, 0, 1) 100%), url('img/big_img.jpeg');
+    }
+}
